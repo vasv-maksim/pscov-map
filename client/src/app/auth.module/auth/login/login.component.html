@@ -1,0 +1,46 @@
+<div class="login">
+  <div class="login__title">Войти в систему</div>
+  <form class="login__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="login__input">
+      <mat-form-field class="form-group">
+        <mat-label>Логин</mat-label>
+        <input matInput placeholder="Логин" formControlName="login">
+      </mat-form-field>
+      <div *ngIf="form.get('login').invalid && form.get('login').touched" class="login__validation">
+        <small *ngIf="form.get('login').errors.required">
+          Логин пуст.
+        </small>
+        <small *ngIf="form.get('login').errors.restrictedName">
+          Состоит из пробелов.
+        </small>
+        <small *ngIf="form.get('login').errors.uniqName">
+          Логин {{form.get('login').value}} уже существует.
+        </small>
+      </div>
+    </div>
+
+    <div class="login__input">
+      <mat-form-field class="form-group">
+        <mat-label>Пароль</mat-label>
+        <input type="password" matInput placeholder="Пароль" formControlName="password">
+      </mat-form-field>
+      <div *ngIf="form.get('password').invalid && form.get('password').touched" class="login__validation">
+        <small *ngIf="form.get('password').errors.required">
+          Пароль пуст.
+        </small>
+        <small *ngIf="form.get('password').errors.minlength && form.get('password').errors.minlength.requiredLength">
+          Менее 6 символов.
+        </small>
+        <small *ngIf="form.get('password').errors.restrictedName">
+          Состоит из пробелов.
+        </small>
+      </div>
+    </div>
+    <div class="login__buttons">
+      <button type="submit" mat-raised-button color="accent" [disabled]="form.invalid || form.disabled">
+        Войти
+      </button>
+    </div>
+  </form>
+
+</div>

@@ -1,0 +1,62 @@
+<!-- Затеменение -->
+<div class="backdrop" [style.display]="display?'block':'none'"></div>
+
+<!-- Модальное окно -->
+<div class="edit-modal" [style.display]="display?'block':'none'">
+
+  <!-- Заголовок -->
+  <div class="edit-modal__header">
+    Редактировать базовую карту
+  </div>
+
+  <!-- Форма -->
+  <div class="edit-modal__body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <!-- Имя -->
+      <div>
+        <mat-form-field class="edit-modal__input">
+          <mat-label>Название</mat-label>
+          <input matInput placeholder="Название" formControlName="title">
+        </mat-form-field>
+        <div *ngIf="form.get('title').invalid && form.get('title').touched" class="edit-modal__validation">
+          <small *ngIf="form.get('title').errors.required">
+            Введите имя.
+          </small>
+          <small *ngIf="form.get('title').errors.restrictedName">
+            Состоит из пробелов.
+          </small>
+        </div>
+      </div>
+      <!-- Описание -->
+      <div>
+        <mat-form-field class="edit-modal__input">
+          <mat-label>Описание</mat-label>
+          <textarea matInput formControlName="description"></textarea>
+        </mat-form-field>
+      </div>
+      <!-- URL -->
+      <div>
+        <mat-form-field class="edit-modal__input">
+          <mat-label>URL</mat-label>
+          <input matInput placeholder="URL" formControlName="url">
+        </mat-form-field>
+        <div *ngIf="form.get('url').invalid && form.get('url').touched" class="edit-modal__validation">
+          <small *ngIf="form.get('url').errors.required">
+            Введите url.
+          </small>
+          <small *ngIf="form.get('url').errors.restrictedName">
+            Состоит из пробелов.
+          </small>
+        </div>
+      </div>
+
+      <!-- Кнопки -->
+      <div class="edit-modal__buttons">
+        <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid">
+          Оk
+        </button>
+        <button mat-raised-button color="accent" type="button" (click)="onCancel()">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div>

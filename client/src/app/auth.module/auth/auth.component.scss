@@ -1,0 +1,35 @@
+@import "../../../global-scss/theme_variables";
+
+// Панель авторизации
+.auth {
+    padding: 1rem;
+    background-color: $primary;
+    box-shadow: 2px 2px 5px 2px gray;
+
+    &__header {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+    }
+
+    &__title {
+        color: white;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    &__buttons {
+        display: flex;
+        margin-right: 1rem;
+        justify-content: flex-end;
+    }
+
+    &__button {
+        margin-right: 1rem;
+    }
+}
+
+// Кнопка активного роута
+.active {
+    opacity: 0.6;
+}

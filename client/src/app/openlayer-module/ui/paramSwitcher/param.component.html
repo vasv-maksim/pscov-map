@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field>
+    <mat-label>Параметр</mat-label>
+    <mat-select [(value)]="paramId" (selectionChange)="changeParam($event)">
+      <mat-option *ngFor="let param of params" [value]="param.id">
+        {{param.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

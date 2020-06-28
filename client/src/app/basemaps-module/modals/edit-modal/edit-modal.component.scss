@@ -1,0 +1,70 @@
+@import "../../../../global-scss/theme_variables";
+
+// Затеменение
+.backdrop {
+    position: absolute;
+    top: 0;
+    background-color: white;
+    opacity: 0.6;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+}
+
+// Модальное окно
+.edit-modal {
+    position: absolute;
+    top: 20%;
+    left: 37%;
+    z-index: 3;
+    width: 400px;
+    height: auto;
+    background-color: white;
+    border-radius: 5px;
+    border: 1px solid $primary;
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.3);
+
+    &__header {
+        background-color: $primary;
+        width: auto;
+        padding: 5px;
+        padding-left: 10px;
+        border-top-right-radius: 2px;
+        border-top-left-radius: 2px;
+        font-size: 14px;
+        color: white;
+    }
+
+    &__body {
+        margin-left: 40px;
+    }
+
+    &__text {
+        margin-top: 40px;
+        color: $primary-text;
+    }
+
+    &__input {
+        color: $primary;
+        font-size: 14px;
+        margin-top: 20px;
+    }
+
+    &__buttons {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        margin-bottom: 20px;
+        width: 45%;
+    }
+
+    // Валидация
+    &__validation {
+        color: red;
+    }
+}
+
+// Переопределение стилей Material
+.mat-form-field {
+    height: 40px;
+}

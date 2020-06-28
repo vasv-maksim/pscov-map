@@ -1,0 +1,10 @@
+<div>
+  <mat-form-field>
+    <mat-label>Подложка</mat-label>
+    <mat-select [(value)]="basemapId" (selectionChange)="changeBasemap($event)">
+      <mat-option *ngFor="let basemap of basemaps" [value]="basemap._id">
+        {{basemap.title}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>

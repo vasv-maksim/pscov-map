@@ -1,0 +1,12 @@
+// NORMALIZE STYLE
+@import "./global-scss/normalize.scss";
+
+// // OPENLAYERS
+@import "./global-scss/ol.scss";
+@import "./global-scss/olext.scss";
+
+// MATERIAL UI
+@import "../node_modules/@angular/material/prebuilt-themes/indigo-pink.css";
+
+// FONTS
+@import "./global-scss/fonts.scss";

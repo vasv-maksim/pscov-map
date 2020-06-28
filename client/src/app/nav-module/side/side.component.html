@@ -1,0 +1,34 @@
+<!-- Открыть боковую панель -->
+<button class="open-button" mat-mini-fab (click)="sidenav.toggle()">+</button>
+
+<!-- Открытая панель -->
+<mat-sidenav #sidenav>
+  <div class="sidenav__content">
+
+    <!-- Панель с логаутом и кнопкой -->
+    <div class="sidenav__tool">
+      <!-- Закрыть панель -->
+      <button class="sidenav__close-button" mat-mini-fab (click)="sidenav.toggle()">-</button>
+      <!-- Разлогиниться -->
+      <app-logout></app-logout>
+    </div>
+
+    <!-- Пункты меню -->
+    <div class="nav-menu" *ngFor="let link of links">
+      <mat-card class="nav-menu__item" [routerLink]="link.route" (click)="sidenav.toggle()">
+        <mat-icon aria-hidden="false" routerLinkActive="nav-menu__item_active">{{link.icon}}</mat-icon>
+        <span class="nav-menu__title" routerLinkActive="nav-menu__title_active">{{link.title}}</span>
+      </mat-card>
+    </div>
+  </div>
+</mat-sidenav>
+
+<mat-sidenav-container class="sidenav">
+  <!-- Закрытая панель -->
+  <mat-sidenav-content class="sidenav__content-container">
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+<router-outlet></router-outlet>

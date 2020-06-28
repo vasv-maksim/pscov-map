@@ -1,0 +1,47 @@
+@import "../../../global-scss/theme_variables";
+
+// Поиск
+.search {
+    margin-left: 100px;
+    margin-top: 10px;
+    width: 200px;
+}
+
+// Кнопка добавить
+.add {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: $primary;
+    transform: scale(2);
+    user-select: none;
+    cursor: pointer;
+}
+
+// Таблица
+.basemaps-table {
+    width: 100%;
+    position: absolute;
+
+    &__header {
+        width: 100%;
+    }
+
+    // Actions
+    &__actions {
+        width: 40%;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    &__icons {
+        color: $primary;
+        user-select: none;
+        cursor: pointer;
+        &:hover {
+            color: #ff4081;
+            user-select: none;
+            cursor: pointer;
+        }
+    }
+}

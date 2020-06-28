@@ -1,0 +1,8 @@
+@import "../../../../global-scss/theme_variables";
+
+.toolbar {
+    user-select: none;
+    color: $primary-text;
+    font-weight: 600;
+    font-size: 16;
+}

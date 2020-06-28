@@ -1,0 +1,46 @@
+<div class="register">
+  <div class="register__title">Регистрация</div>
+  <form class="register__form" [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="register__input">
+      <mat-form-field class="form-group">
+        <mat-label>Логин</mat-label>
+        <input matInput placeholder="Логин" formControlName="login">
+      </mat-form-field>
+      <div *ngIf="form.get('login').invalid && form.get('login').touched" class="register__validation">
+        <small *ngIf="form.get('login').errors.required">
+          Логин пуст.
+        </small>
+        <small *ngIf="form.get('login').errors.uniqName">
+          Логин {{form.get('login').value}} уже существует.
+        </small>
+        <small *ngIf="form.get('login').errors.restrictedName">
+          Состоит из пробелов.
+        </small>
+      </div>
+    </div>
+
+    <div class="register__input">
+      <mat-form-field class="form-group">
+        <mat-label>Пароль</mat-label>
+        <input type="password" matInput placeholder="Пароль" formControlName="password">
+      </mat-form-field>
+      <div *ngIf="form.get('password').invalid && form.get('password').touched" class="register__validation">
+        <small *ngIf="form.get('password').errors.required">
+          Пароль пуст.
+        </small>
+        <small *ngIf="form.get('password').errors.minlength && form.get('password').errors.minlength.requiredLength">
+          Менее 6 символов.
+        </small>
+        <small *ngIf="form.get('password').errors.restrictedName">
+          Состоит из пробелов.
+        </small>
+      </div>
+    </div>
+    <div class="register__buttons">
+      <button type="submit" mat-raised-button color="accent" [disabled]="form.invalid || form.disabled">
+        Ок
+      </button>
+    </div>
+  </form>
+
+</div>

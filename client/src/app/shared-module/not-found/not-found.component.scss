@@ -1,0 +1,38 @@
+@import "../../../global-scss/theme_variables";
+
+.notFound {
+   position: absolute;
+   left: 40%;
+   top: 30%;
+   font-size: 26px;
+   font-weight: 600;
+   color: $primary-text;
+   width: 450px;
+
+   &__text {
+      text-align: center;
+   }
+
+   &__icon-box {
+      margin-top: 50px;
+      text-align: center;
+   }
+
+   &__icon {
+      color: $accent;
+      transform: scale(3);
+   }
+
+   &__button {
+      text-align: center;
+      margin-top: 50px;
+   }
+}
+
+// Переопределение стилей Material
+.mat-flat-button.mat-primary,
+.mat-raised-button.mat-primary,
+.mat-fab.mat-primary,
+.mat-mini-fab.mat-primary {
+   background-color: $primary;
+}

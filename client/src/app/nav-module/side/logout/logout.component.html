@@ -1,0 +1,11 @@
+<div class="logout">
+    <div>
+        <mat-icon class="logout__avatar">account_circle</mat-icon>
+    </div>
+    <div class="logout__username">
+        <span>{{userName | titlecase}}</span>
+    </div>
+    <div (click)="logout()">
+        <mat-icon class="logout__away">exit_to_app</mat-icon>
+    </div>
+</div>

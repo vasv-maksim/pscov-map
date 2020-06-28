@@ -1,0 +1,27 @@
+<!-- Затеменение -->
+<div class="backdrop" [style.display]="display ? 'block':'none'"></div>
+
+<!-- Модальное окно -->
+<div class="delete-modal" [style.display]="display?'block':'none'">
+
+  <!-- Заголовок -->
+  <div class="delete-modal__header">
+    Удалить базовую карту?
+  </div>
+
+  <!-- Форма -->
+  <div class="delete-modal__body">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="delete-modal__text">
+        Имя: {{modalService.basemap$.getValue().title}}
+      </div>
+      <!-- Кнопки -->
+      <div class="delete-modal__buttons">
+        <button mat-raised-button color="accent" type="submit" [disabled]="form.invalid">
+          Оk
+        </button>
+        <button mat-raised-button color="accent" type="button" (click)="onCancel()">Отмена</button>
+      </div>
+    </form>
+  </div>
+</div>

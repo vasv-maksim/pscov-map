@@ -1,0 +1,29 @@
+@import "../../../../global-scss/theme_variables";
+
+.logout {
+    display: flex;
+    justify-content: right;
+    margin-right: 30px;
+    &__avatar {
+        color: $accent;
+        transform: scale(2);
+        margin-right: 30px;
+        user-select: none;
+    }
+
+    &__username {
+        color: $primary-text;
+        font-size: 16px;
+        font-weight: 600;
+        margin-right: 30px;
+        user-select: none;
+    }
+
+    &__away {
+        color: $accent;
+        transform: scale(1.2);
+        margin-right: 30px;
+        user-select: none;
+        cursor: pointer;
+    }
+}
